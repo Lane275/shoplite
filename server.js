@@ -8,8 +8,7 @@ const PORT = process.env.PORT || 3000;
 // 中间件
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname)));
- 'public'));
+app.use(express.static(path.join(__drname, 'public')));
 
 // 模拟数据库
 let orders = [];
