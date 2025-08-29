@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // 中间件
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__drname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 模拟数据库
 let orders = [];
@@ -23,5 +23,7 @@ app.get('/api/orders', (req, res) => {
   res.json(orders);
 });
 
-// 启动
-app.listen(PORT, () => console.log(`ShopLite PWA running at http://localhost:${PORT}`));
+// 启动服务器
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
